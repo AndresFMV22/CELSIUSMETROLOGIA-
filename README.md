@@ -4,7 +4,7 @@
 
 ---
 
-## 📋 Tabla de Contenidos
+##  Tabla de Contenidos
 
 1. [Descripción General](#descripción-general)
 2. [Arquitectura del Proyecto](#arquitectura-del-proyecto)
@@ -19,7 +19,7 @@
 
 ---
 
-## 🎯 Descripción General
+##  Descripción General
 
 Este proyecto implementa un rediseño total del sitio web de **Celsius S.A.S.**, con enfoque extremo en **Mobile-First**, glassmorphism de clase Apple, y funcionalidades industriales avanzadas:
 
@@ -33,7 +33,7 @@ Este proyecto implementa un rediseño total del sitio web de **Celsius S.A.S.**,
 
 ---
 
-## 🏗️ Arquitectura del Proyecto
+##  Arquitectura del Proyecto
 
 ```
 CELSIUSMETROLOGIA-/
@@ -743,7 +743,7 @@ quit
 
 ## 👥 Equipo y Contacto
 
-**Desarrollado por**: Andres Mora Vega (@AndresFMV22)  
+**Desarrollado por**: Andres Felipe Martinez Velasquez (@AndresFMV22)  
 **Cliente**: Celsius S.A.S. (Metrología e Ingeniería Biomédica)  
 **Repositorio**: https://github.com/AndresFMV22/CELSIUSMETROLOGIA-  
 **Servidor de Producción**: Windows IIS / XAMPP (C:\inetpub\wwwroot)
@@ -752,7 +752,7 @@ quit
 
 ## 📄 Licencia
 
-Código fuente © 2024 Andres Mora Vega. Todos los derechos reservados.
+Código fuente © 2026 Andres Felipe Martinez Velasquez. Todos los derechos reservados.
 
 ---
 
