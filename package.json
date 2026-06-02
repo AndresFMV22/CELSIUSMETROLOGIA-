@@ -1,0 +1,36 @@
+{
+  "name": "celsius-metrologia-mobilefirst",
+  "version": "1.0.0",
+  "description": "Tema WordPress Mobile-First con Glasmorphism para Celsius S.A.S. - Metrología e Ingeniería Biomédica",
+  "main": "theme-source/functions.php",
+  "scripts": {
+    "build:css": "node scripts/build-css.js",
+    "watch": "node scripts/watch-css.js",
+    "dev": "npm run watch",
+    "prod": "npm run build:css && echo 'Listo para despliegue'"
+  },
+  "keywords": [
+    "wordpress",
+    "theme",
+    "mobile-first",
+    "glasmorphism",
+    "responsive",
+    "metrologia",
+    "celsius"
+  ],
+  "author": "Andres Mora Vega <andres@example.com>",
+  "license": "GPL-2.0+",
+  "dependencies": {
+    "sass": "^1.69.5"
+  },
+  "devDependencies": {
+    "@parcel/packager-raw-url": "^2.10.3",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.31",
+    "postcss-cli": "^10.1.0"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  }
+}
