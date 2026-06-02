@@ -1,0 +1,98 @@
+// ============================================
+// MAIN SCSS - IMPORTA TODOS LOS MÓDULOS
+// ============================================
+// Orden: Variables -> Base -> Glasmorphism -> Animaciones
+
+@import 'variables';
+@import 'mobile-first';
+@import 'glasmorphism';
+@import 'animations';
+
+// ============================================
+// ESTILOS GLOBALES ADICIONALES
+// ============================================
+
+// Suavizado de fuentes
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+// Ajuste de imágenes responsivas
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+// Links sin saltos visuales
+a {
+  transition: color $transition-base, text-decoration $transition-base;
+}
+
+// ============================================
+// SCROLLBAR PERSONALIZADO (Desktop)
+// ============================================
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: $gray-light;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $blue-primary;
+  border-radius: $radius-full;
+  
+  &:hover {
+    background: $blue-dark;
+  }
+}
+
+// Firefox
+* {
+  scrollbar-color: $blue-primary $gray-light;
+  scrollbar-width: thin;
+}
+
+// ============================================
+// SELECCIÓN DE TEXTO
+// ============================================
+::selection {
+  background: $blue-primary;
+  color: $white;
+}
+
+::-moz-selection {
+  background: $blue-primary;
+  color: $white;
+}
+
+// ============================================
+// FOCUS VISIBLE (Accesibilidad)
+// ============================================
+:focus-visible {
+  outline: 2px solid $blue-primary;
+  outline-offset: 2px;
+}
+
+// ============================================
+// PRINT STYLES
+// ============================================
+@media print {
+  body {
+    background: $white;
+    color: $text-dark;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+}
