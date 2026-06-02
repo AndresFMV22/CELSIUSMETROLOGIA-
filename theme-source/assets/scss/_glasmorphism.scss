@@ -1,0 +1,188 @@
+// ============================================
+// GLASMORPHISM EFFECTS
+// ============================================
+// Estilos de vidrio translúcido estilo Apple
+// Compatible con backdrop-filter (90% navegadores modernos)
+
+@import 'variables';
+
+// ============================================
+// GLASS PRIMITIVOS
+// ============================================
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: $shadow-glass;
+  border-radius: $radius-xl;
+}
+
+.glass-dark {
+  background: rgba(10, 20, 40, 0.6);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  border-radius: $radius-xl;
+}
+
+.glass-thick {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(30px);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  border-radius: $radius-xl;
+}
+
+// ============================================
+// HEADER GLASS (Sticky nav)
+// ============================================
+.glass-header {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  border-radius: 0;  // Sin redondeado en header
+}
+
+// ============================================
+// CARD GLASS (Componentes)
+// ============================================
+.glass-card {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  border-radius: $radius-lg;
+  padding: $spacing-lg;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all $transition-base;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.75);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  }
+}
+
+// ============================================
+// BUTTON GLASS
+// ============================================
+.btn-glass {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  color: $text-dark;
+  font-weight: 600;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  transition: all $transition-base;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+.btn-glass-primary {
+  background: rgba(0, 82, 204, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 82, 204, 0.9);
+  color: $white;
+  font-weight: 700;
+
+  &:hover {
+    background: rgba(0, 82, 204, 0.95);
+    box-shadow: 0 8px 24px rgba(0, 82, 204, 0.3);
+  }
+}
+
+// ============================================
+// INPUT GLASS
+// ============================================
+.input-glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  color: $text-dark;
+  transition: all $transition-base;
+
+  &:focus {
+    background: rgba(255, 255, 255, 0.9);
+    border-color: rgba(0, 82, 204, 0.5);
+    box-shadow: 0 0 0 3px rgba(0, 82, 204, 0.1);
+  }
+
+  &::placeholder {
+    color: rgba(0, 0, 0, 0.4);
+  }
+}
+
+// ============================================
+// OVERLAY GLASS (Modales, menús)
+// ============================================
+.glass-overlay {
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: $radius-2xl;
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.15);
+}
+
+// ============================================
+// BADGE GLASS
+// ============================================
+.badge-glass {
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-sm;
+  padding: 4px 12px;
+  background: rgba(0, 217, 255, 0.15);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(0, 217, 255, 0.3);
+  color: $cyan-accent;
+  font-size: $font-size-sm;
+  font-weight: 600;
+  border-radius: $radius-full;
+}
+
+// ============================================
+// GLASMORPHISM + GRADIENTS (Fondo dinamico)
+// ============================================
+.glass-gradient {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.7) 0%,
+    rgba(232, 240, 255, 0.5) 100%
+  );
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: $radius-xl;
+}
+
+// ============================================
+// BACKGROUND BLUR (Fallback sin backdrop-filter)
+// ============================================
+.glass-fallback {
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: $radius-xl;
+  box-shadow: $shadow-md;
+}
+
+// ============================================
+// RESPONSIVE GLASS (Mobile-first)
+// ============================================
+@media (max-width: $bp-md) {
+  .glass-card {
+    background: rgba(255, 255, 255, 0.75);  // Más opaco en móvil
+    backdrop-filter: blur(12px);
+    padding: $spacing-md;
+  }
+
+  .glass {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+  }
+}
