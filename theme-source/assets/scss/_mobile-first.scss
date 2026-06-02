@@ -1,0 +1,309 @@
+// ============================================
+// MOBILE-FIRST BASE STYLES
+// ============================================
+// Todos los estilos por defecto: 320px - 480px
+// Desktop encapsulado en @media (min-width: 1024px)
+
+@import 'variables';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: $font-primary;
+  font-size: $font-size-base;
+  line-height: 1.6;
+  color: $text-dark;
+  background-color: $white;
+  overflow-x: hidden;
+}
+
+// ============================================
+// TIPOGRAFIA
+// ============================================
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-heading;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: $spacing-md;
+}
+
+h1 {
+  font-size: $font-size-2xl;        // 28px mobile
+  letter-spacing: -0.5px;
+}
+
+h2 {
+  font-size: $font-size-xl;         // 24px mobile
+  letter-spacing: -0.3px;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+h4 {
+  font-size: 18px;
+}
+
+p {
+  margin-bottom: $spacing-md;
+  line-height: 1.8;
+}
+
+a {
+  color: $blue-primary;
+  text-decoration: none;
+  transition: color $transition-base;
+
+  &:hover {
+    color: $blue-dark;
+  }
+}
+
+button, input, textarea, select {
+  font-family: $font-primary;
+  font-size: $font-size-base;
+}
+
+// ============================================
+// CONTENEDOR BASE
+// ============================================
+.container {
+  width: 100%;
+  padding-left: $spacing-md;
+  padding-right: $spacing-md;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// ============================================
+// LAYOUT PRIMITIVOS (Flexbox)
+// ============================================
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gap-xs { gap: $spacing-xs; }
+.gap-sm { gap: $spacing-sm; }
+.gap-md { gap: $spacing-md; }
+.gap-lg { gap: $spacing-lg; }
+.gap-xl { gap: $spacing-xl; }
+
+// ============================================
+// BOTONES BASE (Mobile-First)
+// ============================================
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: $spacing-md $spacing-lg;
+  font-size: $font-size-base;
+  font-weight: 600;
+  border: none;
+  border-radius: $radius-lg;
+  cursor: pointer;
+  transition: all $transition-base;
+  white-space: nowrap;
+  text-align: center;
+  
+  // Asegurar que sea táctil en móviles (min 44px)
+  min-height: 44px;
+  min-width: 44px;
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+.btn-primary {
+  background: $blue-primary;
+  color: $white;
+  box-shadow: $shadow-md;
+
+  &:hover {
+    background: $blue-dark;
+    box-shadow: $shadow-lg;
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+.btn-secondary {
+  background: $gray-light;
+  color: $text-dark;
+  border: 1px solid $gray-medium;
+
+  &:hover {
+    background: $gray-medium;
+    border-color: $gray-dark;
+  }
+}
+
+.btn-accent {
+  background: $cyan-accent;
+  color: #000;
+  font-weight: 700;
+  box-shadow: $shadow-md;
+
+  &:hover {
+    background: #00c4e6;
+    box-shadow: $shadow-lg;
+    transform: translateY(-2px);
+  }
+}
+
+.btn-ghost {
+  background: transparent;
+  color: $blue-primary;
+  border: 2px solid $blue-primary;
+
+  &:hover {
+    background: $blue-light;
+    border-color: $blue-dark;
+  }
+}
+
+// ============================================
+// INPUTS Y FORMS (Mobile-First)
+// ============================================
+input, textarea, select {
+  width: 100%;
+  padding: $spacing-md;
+  font-size: $font-size-base;
+  border: 1px solid $gray-medium;
+  border-radius: $radius-md;
+  background: $white;
+  color: $text-dark;
+  transition: border-color $transition-base, box-shadow $transition-base;
+
+  &:focus {
+    outline: none;
+    border-color: $blue-primary;
+    box-shadow: 0 0 0 3px $blue-light;
+  }
+
+  &::placeholder {
+    color: $text-muted;
+  }
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+// ============================================
+// GRID Y ESPACIO (Mobile-First)
+// ============================================
+.grid {
+  display: grid;
+  gap: $spacing-md;
+  grid-template-columns: 1fr;  // Mobile: 1 columna
+}
+
+.grid-2 {
+  display: grid;
+  gap: $spacing-md;
+  grid-template-columns: 1fr;  // Mobile: 1 columna
+}
+
+// ============================================
+// SECCIONES
+// ============================================
+section {
+  padding: $spacing-xl $spacing-md;  // Mobile: 32px top/bottom, 16px left/right
+}
+
+// ============================================
+// UTILIDADES
+// ============================================
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.text-muted { color: $text-muted; }
+.text-success { color: $green-success; }
+.text-error { color: $red-error; }
+.text-warning { color: $orange-warning; }
+
+.font-bold { font-weight: 700; }
+.font-semibold { font-weight: 600; }
+.font-medium { font-weight: 500; }
+.font-regular { font-weight: 400; }
+.font-light { font-weight: 300; }
+
+// ============================================
+// OVERFLOW RESPONSIVO (Tablas)
+// ============================================
+.overflow-x-auto {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;  // Smooth scrolling en iOS
+}
+
+// ============================================
+// RESPONSIVE (DESKTOP ENCAPSULADO)
+// ============================================
+@media (min-width: $bp-lg) {
+  // Tipografía Desktop
+  h1 {
+    font-size: $font-size-4xl;  // 42px
+  }
+
+  h2 {
+    font-size: $font-size-3xl;  // 32px
+  }
+
+  // Secciones Desktop
+  section {
+    padding: $spacing-2xl $spacing-xl;  // 48px vertical, 32px horizontal
+  }
+
+  // Contenedor Desktop
+  .container {
+    max-width: 1200px;
+    padding-left: $spacing-xl;
+    padding-right: $spacing-xl;
+  }
+
+  // Grid Desktop: 2 columnas
+  .grid-2 {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  // Inputs más grandes
+  input, textarea, select {
+    padding: $spacing-lg;
+    font-size: $font-size-lg;
+  }
+
+  // Botones más grandes
+  .btn {
+    padding: $spacing-lg $spacing-xl;
+    font-size: $font-size-lg;
+  }
+}
